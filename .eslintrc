@@ -1,0 +1,30 @@
+{
+	"extends": "airbnb-base",
+	"plugins": ["smells"],
+	"parserOptions": {
+		"ecmaVersion": 6
+	},
+	"env": {
+		"node": true
+	},
+	"rules": {
+		"indent": ["error", "tab"],
+		"max-depth": ["error", 4],
+		"max-len": ["error", 100],
+		"max-statements": ["error", 15],
+		"max-lines": ["error", {
+			"max": 100,
+			"skipBlankLines": true,
+			"skipComments": true
+		}],
+		"comma-dangle": ["warn", "never"],
+		"object-curly-spacing": ["error", "never"],
+		"radix": "off",
+
+		"smells/no-switch": "warn",
+		"smells/no-complex-switch-case": "warn",
+		"smells/no-setinterval": "warn",
+		"smells/no-this-assign": "warn",
+		"smells/no-complex-string-concat": "warn"
+	}
+}
