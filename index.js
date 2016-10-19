@@ -22,8 +22,12 @@ function throw500(res, err) {
 	res.end(err);
 }
 
+function isOriginInList(origin){
+	return origins.indexOf('http://' + origin) > -1 || origins.indexOf('https://' + origin) > -1
+}
+
 const server = http.createServer((req, res) => {
-	if (origins.indexOf(req.headers.origin) > -1) {
+	if (isOriginInList(req.headers.origin)) {
 		res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
 	}
 	if (req.method === 'POST' && req.url === '/') {
