@@ -23,7 +23,7 @@ function throw500(res, err) {
 }
 
 function isOriginInList(origin){
-	return origins.indexOf('http://' + origin) > -1 || origins.indexOf('https://' + origin) > -1
+	return origins.indexOf(origin.replace(/^https?:\/\//, '')) > -1
 }
 
 const server = http.createServer((req, res) => {
