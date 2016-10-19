@@ -14,7 +14,7 @@ if (savePath === undefined) throw new Error('SAVE_PATH environment variable is n
 
 let origins = [];
 try {
-	origins = fs.readFileSync('/home/btm/subscriptions/foo', {encoding: 'utf-8'}).split('\n').filter(o => o);
+	origins = fs.readFileSync(allowedOriginsFile, {encoding: 'utf-8'}).split('\n').filter(o => o);
 } catch (ignore){}
 
 function throw500(res, err) {
